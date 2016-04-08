@@ -1,0 +1,11 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+RewriteRule   ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)\.serv$   index.php?service=$3&id=$2&pagegroup=$1  [L,QSA]
+RewriteRule   ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)\.serv$   index.php?service=$2&pagegroup=$1  [L,QSA]
+RewriteRule   ^([a-zA-Z0-9_]+)\.serv$   index.php?service=$1  [L,QSA]
+RewriteRule   ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)\.html$   index.php?page=$3&id=$2&pagegroup=$1  [L,QSA]
+RewriteRule   ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)/$   index.php?page=edit&id=$2&pagegroup=$1  [L,QSA]
+RewriteRule   ^([a-zA-Z0-9_]+)/([a-zA-Z0-9_]+)\.html$   index.php?page=$2&pagegroup=$1  [L,QSA]
+RewriteRule   ^([a-zA-Z0-9_]+)/$   index.php?pagegroup=$1  [L,QSA]
+RewriteRule   ^([a-zA-Z0-9_]+)\.html$   index.php?page=$1  [L,QSA]
